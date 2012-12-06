@@ -1,17 +1,25 @@
+
 <!DOCTYPE html>
-
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo</title>
 
-    <title>BrowserDebug™</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.6.2.js'></script>
+  <script type="text/javascript" src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.js"></script>
 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
 
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css">
+
+
+
+  <style type='text/css'>
+
+  </style>
+
 
 
 <script type='text/javascript'>//<![CDATA[
@@ -25,12 +33,12 @@ $("#listitem").swiperight(function() {
 
 </script>
 
+
 </head>
 
-<body>
 
-    <!-- Home -->
-    <div data-role="page" id="page1">
+<body>
+  <div data-role="page" id="home">
 
         <div data-role="header">
              <a id="emailButton"
@@ -42,6 +50,31 @@ $("#listitem").swiperight(function() {
                 class="ui-btn-right">Email</a>
             <h1 align="left">BrowserMaster 5000</h1>
         </div>
+
+
+    <div data-role="content">
+        <p>
+            <ul data-role="listview" data-inset="true" data-theme="c">
+                <li id="listitem">Swipe Right to view Page 1</li>
+            </ul>
+        </p>
+    </div>
+</div>
+
+<div data-role="page" id="page1">
+
+        <div data-role="header">
+             <a id="emailButton"
+                data-role="button"
+                data-theme="b"
+                href="mailto:?subject=Browser Debug Info&body=Hello. This was sent from a BrowserMaster 5000!"
+                data-icon="info"
+                data-iconpos="right"
+                class="ui-btn-right">Email</a>
+            <h1 align="left">BrowserMaster 5000</h1>
+        </div>
+
+    <div data-role="content">
 
 
         <div data-role="collapsible-set">
@@ -78,48 +111,11 @@ $("#listitem").swiperight(function() {
                 </ul>
             </div>
         </div>
-
-        <div data-role="content">
-            <p>
-                <ul data-role="listview" data-inset="true" data-theme="c">
-                    <li id="listitem">Swipe Me</li>
-                </ul>
-            </p>
-        </div>
-
-
-    </div>​
-
-            <div data-theme="a" data-role="footer" data-position="fixed">
-                <h1>I'm a Footer!</h1>
-            </div>
-
-        </div>
     </div>
-
-    <div data-role="page">
-
-        <div data-role="content">
-
-            <script>
-                var output = document.write('<br><br>Codename: ' + navigator.appCodeName);
-                document.write('<br>Language: ' + navigator.language);
-                document.write('<br>Platform: ' + navigator.platform);
-
-                for (i=0; i<navigator.plugins.length;i++){
-                    document.write('<br>&nbsp\; ' + navigator.plugins[i].name);
-                }
-
-                document.write('<br><br>Java Enabled:   ' + navigator.javaEnabled());
-                document.write('<br>Title: ' + document.title);
-                document.write('<br>Host: ' + location.host);
-                document.write('<br>Host Name: ' + location.hostname);
-
-            </SCRIPT>
-
-        </div>
-
-    </div>
+</div>
 
 </body>
+
+
 </html>
+
