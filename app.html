@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BrowserDebug™</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+
+    <script>
+        $(document).on("pageinit", function(){
+            $("#home").on('tap', '#image', function(event, ui) {
+                var tapCaption = $(this).data("tap");
+                $("#caption").addClass("comment").html(tapCaption);
+            });
+            $("#home").on('taphold','#caption', function(event, ui) {
+                var $this = $(this);
+                var tapholdCaption = $this.data("appTaphold");
+                $this.html(tapholdCaption);
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Home -->
+    <div data-role="page" id="page1">
+
+        <div data-role="header">
+             <a id="emailButton"
+                data-role="button"
+                data-theme="b"
+                href="mailto:?subject=Browser Debug Info&body=Hello. This was sent from a BrowserMaster 5000!"
+                data-icon="info"
+                data-iconpos="right"
+                class="ui-btn-right">Email</a>
+            <h1 align="left">BrowserMaster 5000</h1>
+        </div>
+
+
+        <div data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>Browser Information</h3>
+                <ul>
+                    <li>5.0 (Windows; Windows7 7.5.1)</li>
+                    <li>AppleWebKit/537.11 (KHTML, like Gecko)</li>
+                    <li>IE/9.1.0.1271.95/537.11</li>
+                    <li>Title: BrowserDebug™</li>
+                    <li>Host: localhost</li>
+                    <li>Host Name: localhost</li>
+                </ul>
+            </div>
+            <div data-role="collapsible">
+                <h3>Plugins</h3>
+                <ul>
+                    <li>Codename: Mozilla</li>
+                    <li>Language: en-US</li>
+                    <li>Platform: Intel</li>
+                    <li>Shockwave Flash</li>
+                    <li>Chrome Remote Desktop Viewer</li>
+                    <li>Native Client</li>
+                    <li>Chrome PDF Viewer</li>
+                    <li>Shockwave Flash</li>
+                    <li>QuickTime Plug-in 7.7.1</li>
+                    <li>SharePoint Browser Plug-in</li>
+                </ul>
+            </div>
+            <div data-role="collapsible">
+                <h3>Java</h3>
+                <ul>
+                    <li>Java Enabled: true</li>
+                </ul>
+            </div>
+        </div>
+
+            <div data-theme="a" data-role="footer" data-position="fixed">
+                <h1>I'm a Footer!</h1>
+            </div>
+
+        </div>
+    </div>
+
+    <div data-role="page">
+
+        <div data-role="content">
+
+            <script>
+                var output = document.write('<br><br>Codename: ' + navigator.appCodeName);
+                document.write('<br>Language: ' + navigator.language);
+                document.write('<br>Platform: ' + navigator.platform);
+
+                for (i=0; i<navigator.plugins.length;i++){
+                    document.write('<br>&nbsp\; ' + navigator.plugins[i].name);
+                }
+
+                document.write('<br><br>Java Enabled:   ' + navigator.javaEnabled());
+                document.write('<br>Title: ' + document.title);
+                document.write('<br>Host: ' + location.host);
+                document.write('<br>Host Name: ' + location.hostname);
+
+            </SCRIPT>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
